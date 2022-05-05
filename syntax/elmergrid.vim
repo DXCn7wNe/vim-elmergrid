@@ -39,8 +39,10 @@ syn keyword elmergridBool		True False
 " Keywords
 syn keyword elmergridKeyword 	Version MATC
 syn match elmergridKeyword	"Coordinate \(System\|Ratios\)"
-syn match elmergridKeyword	"Subcell \(Divisions\|Limits\|Sizes\|Origin\)"
-syn match elmergridKeyword	"Material \(Structure\|Interval\)"
+syn match elmergridKeyword	"Subcell Divisions in \(1\|2\|3\)D"
+syn match elmergridKeyword	"Subcell \(Limits\|Sizes\|Origin\)"
+syn match elmergridKeyword	"Material Structure in \(1\|2\|3\)D"
+syn keyword elmergridKeyword	Materials Interval 
 syn match elmergridKeyword	"Extrude \(Structure\|Material Mappings\|BC Offset\|Helicity\)"
 syn match elmergridKeyword	"Geometry Mappings"
 syn match elmergridKeyword	"Polar Radius"
@@ -52,17 +54,21 @@ syn keyword elmergridKeyword	Numbering
 syn match elmergridKeyword	"Reference Density"
 syn match elmergridKeyword	"Surface Elements"
 syn match elmergridKeyword	"Volume \(Elements\|Nodes\)"
-syn match elmergridKeyword	"Element \(Nodes\|Degree\|Midpoints\|Ratios\|Densities\|Divisions\)"
+syn match elmergridKeyword	"Element \(Nodes\|Degree\|Midpoints\|Ratios\|Densities\|Divisions\|Innernodes\)"
 syn keyword elmergridKeyword	Triangles Elementtype
 syn match elmergridKeyword	"Minimum Element Divisions"
 syn match elmergridKeyword	"Start New Mesh"
+" ===
+syn keyword elmergridString	Vertical
+syn match elmergridString	"Cartesian \(1\|2\|3\)D"
+
 
 "
 if !exists("did_elmergrid_syntax_inits")
   let did_elmergrid_syntax_inits = 1
   " The default methods for highlighting.  Can be overridden later
   " hi link elmergridStatement	Statement
-  " hi link elmergridLabel		Special
+  hi link elmergridLabel		Special
   hi link elmergridBoundaryDefinitions	Conditional
   " hi link elmergridConditional	Conditional
   " hi link elmergridRepeat		Repeat
@@ -83,7 +89,7 @@ if !exists("did_elmergrid_syntax_inits")
   hi link elmergridKeyword		Operator
   " hi link elmergridIdentifier	Identifier
   " hi link elmergridPreCondit	PreCondit
-  " hi link elmergridString		String
+  hi link elmergridString		String
   " hi link elmergridOptions		PreProc
   " hi link elmergridOption2		PreProc
 endif
